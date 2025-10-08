@@ -1,4 +1,4 @@
-# 🧠 Advanced Image Processing — Lab Sessions
+# 🧠 Advanced Image Processing
 
 This repository contains the laboratory exercises developed for the **Advanced Image Processing (DTA095A)** course.  
 Each lab explores key concepts in image degradation, restoration, and modern optimization-based and deep-learning methods for inverse problems in imaging.
