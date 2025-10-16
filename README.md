@@ -7,11 +7,11 @@ Each lab explores key concepts in image degradation, restoration, and modern opt
 
 ## 📘 Lab Overview
 
-| Lab | Title | Topics | Status |
-|------|-------|---------|---------|
-| **Lab 1** | Noise & Spatial Filters / Deblurring: Inverse and Wiener | Noise modeling, spatial filtering, frequency-domain deblurring | ✅ Completed |
-| **Lab 2** | ISTA Deblurring & ADMM Inpainting | Sparsity priors, Plug-and-Play, DRUNet integration | ✅ Completed |
-| **Lab 3** | *(To be released)* | TBD | 🚧 Upcoming |
+| Lab | Topics | Status |
+|------|---------|---------|
+| **Lab 1** | Noise modeling, spatial filtering, frequency-domain deblurring | ✅ Completed |
+| **Lab 2** | Sparsity priors, Plug-and-Play, DRUNet integration | ✅ Completed |
+| **Lab 3** | PnP-ADMM vs PnP-FB, MP vs OMP | ✅ Completed |
 
 ---
 
@@ -57,9 +57,26 @@ Experiments include **ISTA** (Iterative Shrinkage-Thresholding Algorithm) in bot
 
 ---
 
-## 🧭 Lab 3 — *To Be Released*
+## 🔬 Lab 3 — PnP Methods & Sparse Approximation
 
-> 🔒 **Coming soon!**  
+### 🔍 Overview
+This lab compares **Plug-and-Play (PnP) optimization frameworks** (ADMM vs Forward-Backward) with different denoisers, and evaluates **sparse approximation algorithms** (Matching Pursuit vs Orthogonal Matching Pursuit) for image reconstruction tasks.
+
+### 🧪 Key Topics
+- **PnP-ADMM vs PnP-Forward-Backward** with deterministic and learned denoisers
+- **Denoiser comparison**: Median, Bilateral, Non-Local Means (NLM), DRUNet
+- **Hyperparameter analysis**: ρ (ADMM), τ (FB), denoising strength
+- **MP vs OMP** performance with orthogonal and non-orthogonal dictionaries
+- **Sparsity-level analysis** across different image resolutions
+- Evaluation metrics: **PSNR**, **LPIPS**, convergence behavior
+
+### 📈 Findings
+- **DRUNet denoiser** consistently outperforms deterministic methods in both PnP frameworks, achieving highest PSNR and best perceptual quality
+- **NLM** provides the best balance among deterministic denoisers with competitive PSNR and lowest LPIPS
+- **PnP-FB** generally achieves better results than PnP-ADMM when using the same denoiser
+- **OMP** significantly outperforms **MP** with non-orthogonal dictionaries, especially at moderate sparsity levels, due to global coefficient optimization
+- Both MP and OMP perform identically with orthogonal dictionaries
+- Early stopping strategy effectively prevents over-smoothing while reducing computational cost
 
 ---
 
